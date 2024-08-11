@@ -1,0 +1,51 @@
+.footer {
+  background-color: #333; /* Темный фон подвала */
+  color: #fff; /* Белый текст */
+  padding: 40px 0; /* Отступы сверху и снизу */
+}
+
+.footer h5 {
+  margin-bottom: 20px; /* Отступ снизу заголовков */
+  color: #ff4500; /* Рыжий цвет заголовков */
+}
+
+.footer p {
+  margin: 0; /* Убираем стандартные отступы */
+  font-size: 1rem; /* Размер шрифта для параграфов */
+}
+
+.footer-links ul {
+  list-style-type: none; /* Убираем маркеры списка */
+  padding: 0; /* Убираем внутренние отступы */
+}
+
+.footer-links ul li {
+  margin-bottom: 10px; /* Отступ между пунктами списка */
+}
+
+.footer-links ul li a {
+  color: #fff; /* Белый цвет ссылок */
+  text-decoration: none; /* Убираем подчеркивание */
+}
+
+.footer-links ul li a:hover {
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+.footer-about {
+  margin-top: 20px;
+}
+
+.footer-author {
+  margin-top: 20px;
+  font-size: 0.9rem; /* Размер шрифта для авторских прав */
+}
+
+.author-name {
+  text-decoration: none;
+  color: #ff4500; /* Рыжий цвет для имени разработчика */
+}
+
+.text-center {
+  text-align: center; /* Центрируем текст */
+}

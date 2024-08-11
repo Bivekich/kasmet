@@ -42,9 +42,18 @@
   color: #fff;
 }
 
+.contact-button a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .contact-button:hover {
   background-color: #fff;
   color: #000; 
+}
+
+.contact-button a:hover {
+  color: #000;
 }
 
 .contact-button:focus {

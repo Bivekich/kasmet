@@ -15,7 +15,7 @@ const Clients = () => {
   ];
 
   return (
-    <div className="clients">
+    <div className="clients" id='clients'>
       <Container className="py-5">
         <h2>Наши Заказчики</h2>
         <Row>

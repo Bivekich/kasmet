@@ -18,7 +18,7 @@ const Header = () => {
             <Nav.Link href="#clients">Заказчики</Nav.Link>
             <Nav.Link href="#addresses">Адреса</Nav.Link>
           </Nav>
-          <Button variant="outline-light" className="contact-button">Контакты</Button>
+          <Button variant="outline-light" className="contact-button"><a href="#contacts">Контакты</a></Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
