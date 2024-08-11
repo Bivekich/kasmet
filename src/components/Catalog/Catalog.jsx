@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Card, Table } from 'react-bootstrap';
-import './Catalog.css'; // Импорт стилей для Catalog
+import './Catalog.css';
 
 const Catalog = () => {
   return (

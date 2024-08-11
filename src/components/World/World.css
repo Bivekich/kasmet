@@ -1,0 +1,54 @@
+.world {
+  background-color: #000;
+  color: #fff;
+  padding: 60px 0;
+}
+
+.world h2 {
+  color: #ff4500;
+  margin-bottom: 20px;
+}
+
+.world p {
+  margin-bottom: 15px;
+}
+
+.world ul {
+  list-style: none;
+  padding: 0;
+}
+
+.world li {
+  margin-bottom: 10px;
+}
+
+.world .map-container {
+  height: 400px;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.map {
+  height: 100%;
+}
+
+.supplies-info {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.supplies-info h3 {
+  color: #ff4500;
+  margin-bottom: 15px;
+}
+
+.supplies-info ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.supplies-info li {
+  margin-bottom: 10px;
+}

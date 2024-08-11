@@ -1,26 +1,26 @@
 .catalog {
-  background-color: #ED6841; /* Рыжий фон для секции каталога */
-  color: #fff; /* Белый текст */
+  background-color: #ED6841;
+  color: #fff;
   padding: 60px 0;
 }
 
 .catalog h2 {
-  color: #fff; /* Белый текст заголовка */
+  color: #fff;
   margin-bottom: 30px;
 }
 
 .catalog-card {
-  background-color: #fff; /* Белый фон для карточек */
-  color: #000; /* Черный текст внутри карточек */
-  border: none; /* Без границ у карточек */
-  border-radius: 10px; /* Скругление углов карточек */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень у карточек */
-  transition: transform 0.3s, box-shadow 0.3s; /* Плавные анимации */
+  background-color: #fff;
+  color: #000; 
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .catalog-card:hover {
-  transform: translateY(-10px); /* Подъем карточки при наведении */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Увеличение тени при наведении */
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .catalog-section {
@@ -28,9 +28,9 @@
 }
 
 .price-table {
-  background-color: #fff; /* Белый фон для таблицы */
-  color: #000; /* Черный текст в таблице */
-  border-radius: 10px; /* Скругление углов таблицы */
+  background-color: #fff; 
+  color: #000; 
+  border-radius: 10px;
 }
 
 .price-table th, .price-table td {
