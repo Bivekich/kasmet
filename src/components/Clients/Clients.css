@@ -1,0 +1,19 @@
+.clients {
+  background-color: #fff; 
+  padding: 60px 0;
+}
+
+.clients h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #000; 
+}
+
+.client-logo {
+  width: 120px; 
+  height: 120px;
+  object-fit: contain;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 10px;
+}
