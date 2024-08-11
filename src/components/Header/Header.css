@@ -1,6 +1,6 @@
 .header {
   padding: 20px;
-  background-color: #000; 
+  background-color: #000!important; 
 }
 
 .header-container {
@@ -28,10 +28,11 @@
   margin: 0 15px;
   transition: color 0.3s;
   color: #fff; 
+  text-transform: uppercase;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #ff4500;
+  color: #ED6841;
 }
 
 .contact-button {

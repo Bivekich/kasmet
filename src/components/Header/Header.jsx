@@ -4,14 +4,14 @@ import './Header.css';
 
 const Header = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" className="header">
+    <Navbar variant="dark" expand="lg" className="header">
       <Container className="header-container">
         <Navbar.Brand href="#home" className="brand">
           КАСМЕТ
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mx-auto"> {/* Центрируем ссылки */}
+          <Nav className="mx-auto">
             <Nav.Link href="#about">О компании</Nav.Link>
             <Nav.Link href="#catalog">Каталог</Nav.Link>
             <Nav.Link href="#world">В мире</Nav.Link>
