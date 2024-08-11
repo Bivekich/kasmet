@@ -1,0 +1,51 @@
+.header {
+  padding: 20px;
+  background-color: #000; 
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.navbar {
+  width: 100%;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+  margin: 0 15px;
+  transition: color 0.3s;
+  color: #fff; 
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ff4500;
+}
+
+.contact-button {
+  border-radius: 0;
+  border: 2px solid #fff;
+  transition: background-color 0.3s, color 0.3s;
+  color: #fff;
+}
+
+.contact-button:hover {
+  background-color: #fff;
+  color: #000; 
+}
+
+.contact-button:focus {
+  box-shadow: none;
+}
