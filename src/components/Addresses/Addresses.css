@@ -32,3 +32,21 @@
   margin: 0 0 10px;
   color: #666;
 }
+
+@media (max-width: 992px) {
+  .address-card {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .address-card {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .address-card {
+    padding: 8px;
+  }
+}

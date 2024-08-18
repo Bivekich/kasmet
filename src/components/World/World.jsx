@@ -1,45 +1,47 @@
-import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import { useTranslation } from 'react-i18next';
 import './World.css';
 
+// Задайте иконку маркера
+const customIcon = new L.Icon({
+  iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Font_Awesome_5_solid_map-marker-alt.svg/898px-Font_Awesome_5_solid_map-marker-alt.svg.png?20180810213559',
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+  popupAnchor: [0, -32]
+});
+
 const cities = [
-  { name: 'Дубай', position: [25.276987, 55.296249] },
-  { name: 'Ереван', position: [40.179186, 44.499104] },
-  { name: 'Шанхай', position: [31.230416, 121.473701] },
-  { name: 'Пекин', position: [39.904202, 116.407394] }
+  { name: 'Dubai', position: [25.276987, 55.296249] },
+  { name: 'Yerevan', position: [40.179186, 44.499104] },
+  { name: 'Shanghai', position: [31.230416, 121.473701] },
+  { name: 'Beijing', position: [39.904202, 116.407394] }
 ];
 
 const World = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="world" id='world'>
-      <Container className="py-5">
+      <div className="map-container">
+        <MapContainer center={[55, 60]} zoom={2} className="map" scrollWheelZoom={false}>
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          {cities.map(city => (
+            <Marker key={city.name} position={city.position} icon={customIcon}>
+              <Popup>{t(city.name)}</Popup>
+            </Marker>
+          ))}
+        </MapContainer>
+      </div>
+      <Container className="text-content">
         <Row>
-          <Col md={6}>
-            <h2>В мире</h2>
-            <p>Мы гордимся тем, что имеем возможность и опыт поставки нашей продукции в дружественные страны по всему миру. Наша компания активно развивает международные связи и сотрудничество с партнерами в различных уголках планеты.</p>
-            <p><strong>Наши ключевые направления:</strong></p>
-            <ul>
-              <li><strong>Дубай:</strong> Один из крупнейших финансовых и торговых центров Ближнего Востока. Мы предоставляем наши услуги и продукцию в этот динамично развивающийся рынок, обеспечивая высокое качество и надежность.</li>
-              <li><strong>Ереван:</strong> Столицa Армении, важный центр экономического и культурного взаимодействия в регионе. Наши решения помогают удовлетворять потребности местной промышленности и бизнеса.</li>
-              <li><strong>Шанхай:</strong> Один из ведущих финансовых и торговых хабов в Китае и на международной арене. Мы активно сотрудничаем с партнерами в этом стратегически важном городе.</li>
-              <li><strong>Пекин:</strong> Столица Китая, центр политических и экономических решений. Наша компания обеспечивает поставки и услуги, соответствующие самым высоким стандартам.</li>
-            </ul>
-          </Col>
-          <Col md={6}>
-            <div className="map-container">
-              <MapContainer center={[20, 0]} zoom={2} className="map">
-                <TileLayer
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                {cities.map(city => (
-                  <Marker key={city.name} position={city.position}>
-                    <Popup>{city.name}</Popup>
-                  </Marker>
-                ))}
-              </MapContainer>
-            </div>
+          <Col md={12}>
+            <h2>{t('worldTitle')}</h2>
+            <p>{t('worldDescription')}</p>
           </Col>
         </Row>
       </Container>

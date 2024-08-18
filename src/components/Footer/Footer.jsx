@@ -1,39 +1,42 @@
-import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import './Footer.css'; // Импорт стилей для Footer
+import { useTranslation } from 'react-i18next';
+import './Footer.css';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="footer">
       <Container className="py-4">
         <Row className="align-items-start">
-          <Col md={4} className="footer-contact">
-            <h5>Контакты</h5>
-            <p><strong>Телефон:</strong> +7 (123) 456-78-90</p>
-            <p><strong>Электронная почта:</strong> info@kasmet.com</p>
+          <Col xs={12} md={4} className="footer-contact">
+            <h5>{t('footer_contacts')}</h5>
+            <p><strong>{t('phone_label')}:</strong> +7 (123) 456-78-90</p>
+            <p><strong>{t('email_label')}:</strong> info@kasmet.com</p>
           </Col>
-          <Col md={4} className="footer-links">
-            <h5>Ссылки</h5>
+          <Col xs={12} md={4} className="footer-links">
+            <h5>{t('footer_links')}</h5>
             <ul>
-              <li><a href="#about">О компании</a></li>
-              <li><a href="#catalog">Каталог</a></li>
-              <li><a href="#world">В мире</a></li>
-              <li><a href="#clients">Заказчики</a></li>
-              <li><a href="#addresses">Адреса</a></li>
+              <li><a href="#about">{t('about')}</a></li>
+              <li><a href="#catalog">{t('catalog')}</a></li>
+              <li><a href="#world">{t('world')}</a></li>
+              <li><a href="#clients">{t('clients')}</a></li>
+              <li><a href="#addresses">{t('addresses')}</a></li>
             </ul>
           </Col>
-          <Col md={4} className="footer-about">
-            <h5>О компании</h5>
+          <Col xs={12} md={4} className="footer-about">
+            <h5>{t('footer_about')}</h5>
             <p>
-              ООО “Касмет” — ваш надежный оператор на рынке драгоценных металлов.
-              Наша компания специализируется на торговле драгоценными металлами и техническими изделиями из них.
+              {t('footer_description')}
             </p>
           </Col>
         </Row>
         <Row>
           <Col className="text-center mt-4">
-            <p>&copy; {new Date().getFullYear()} Касмет. Все права защищены.</p>
-            <p className="footer-author">Made with ❤️ by <a href='https://profi.ru/profile/DanilovLI' className="author-name">Lev Danilov</a></p>
+            <p>&copy; {new Date().getFullYear()} {t('company_name')}. {t('all_rights_reserved')}</p>
+            <p className="footer-author">
+              {t('made_with')} ❤️ {t('by')} <a href='https://biveki.ru' className="author-name">Lev Danilov</a>
+            </p>
           </Col>
         </Row>
       </Container>

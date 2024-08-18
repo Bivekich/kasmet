@@ -1,7 +1,7 @@
 {
   "name": "kasmet",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "i18next": "^23.12.2",
     "leaflet": "^1.9.4",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18.3.1",
+    "react-i18next": "^15.0.1",
     "react-leaflet": "^4.2.1"
   },
   "devDependencies": {

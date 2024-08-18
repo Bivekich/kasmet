@@ -5,44 +5,71 @@
 
 .hero-overlay {
   background-color: #ED6841;
-  padding: 40px 0;
+  padding: 60px 0;
 }
 
 .hero-text-col {
-  display: flex;
-  align-items: center;
-}
-
-.hero-text-box {
   padding: 20px;
-  border-radius: 10px;
 }
 
-.hero-text-box h1 {
+.company-name {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.hero-text-col h1 {
   font-size: 2rem;
   margin: 0;
   line-height: 1.2;
+  color: #fff;
 }
 
 .hero-carousel-col {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .hero-carousel .carousel-item img {
   width: 100%;
   height: auto;
-  max-height: 400px; 
+  max-height: 400px;
   border-radius: 10px;
 }
 
 .hero-description {
-  padding: 60px;
+  padding: 80px;
   background-color: #000;
-  color: #fff; 
+  color: #fff;
+  text-align: center;
 }
 
 .hero-description p {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .company-name {
+    font-size: 2rem;
+  }
+
+  .hero-text-col h1 {
+    font-size: 1rem;
+  }
+
+  .hero-description {
+    padding: 40px;
+  }
+
+  .hero-description p {
+    font-size: 1.2rem;
+  }
+
+  .hero-carousel .carousel-item img {
+    max-height: 300px;
+  }
 }

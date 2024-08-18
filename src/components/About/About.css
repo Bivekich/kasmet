@@ -53,41 +53,42 @@
   margin-bottom: 5px;
 }
 
-.about-additional-benefits {
-  margin-top: 40px;
-}
-
-.about-additional-benefits h3 {
-  margin-bottom: 20px;
-}
-
-.benefit-col {
-  margin-bottom: 20px;
-}
-
-.benefit-card {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-}
-
-.benefit-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-}
-
-.benefit-card .card-body {
-  text-align: center;
-  padding: 20px;
-}
-
-.benefit-card .card-title {
-  font-size: 1.1rem;
-}
-
 .about-final-text {
   margin-top: 20px;
   font-size: 1.1rem;
   line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+  .about-text-col, .about-benefits-col {
+    padding: 0;
+  }
+
+  .about-text-col h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-text-col p {
+    font-size: 1rem;
+  }
+
+  .about-benefits-col ul {
+    padding-left: 0;
+  }
+
+  .about-benefits-col li {
+    flex-direction: row;
+  }
+
+  .arrow {
+    font-size: 1.2rem;
+  }
+
+  strong {
+    font-size: 0.7rem;
+  }
+
+  .about-final-text {
+    font-size: 1rem;
+  }
 }
