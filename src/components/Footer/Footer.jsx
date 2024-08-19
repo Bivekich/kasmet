@@ -11,8 +11,8 @@ const Footer = () => {
         <Row className="align-items-start">
           <Col xs={12} md={4} className="footer-contact">
             <h5>{t('footer_contacts')}</h5>
-            <p><strong>{t('phone_label')}:</strong> +7 (123) 456-78-90</p>
-            <p><strong>{t('email_label')}:</strong> info@kasmet.com</p>
+            <p><strong>{t('phone_label')}:</strong> +7 (985) 756-25-95</p>
+            <p><strong>{t('email_label')}:</strong> info@oookasmet.com</p>
           </Col>
           <Col xs={12} md={4} className="footer-links">
             <h5>{t('footer_links')}</h5>

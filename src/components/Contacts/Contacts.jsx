@@ -48,7 +48,7 @@ const Contacts = () => {
         <Row className="align-items-center">
           <Col xs={12} md={4} className="contact-info-container">
             <p className="contact-info">
-              <strong>{t('phone_label')}:</strong> +7 (123) 456-78-90
+              <strong>{t('phone_label')}:</strong> +7 (985) 756-25-95
             </p>
           </Col>
           <Col xs={12} md={4} className="text-center">
@@ -56,7 +56,7 @@ const Contacts = () => {
           </Col>
           <Col xs={12} md={4} className="contact-info-container">
             <p className="contact-info">
-              <strong>{t('email_label')}:</strong> info@kasmet.com
+              <strong>{t('email_label')}:</strong> info@oookasmet.com
             </p>
           </Col>
         </Row>
