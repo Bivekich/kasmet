@@ -14,7 +14,7 @@ const Clients = () => {
     { src: "/clients/6.svg", name: "КРАСЦВЕТМЕТ" },
     { src: "/clients/7.jpg", name: "РОСАТОМ" },
     { src: "/clients/8.png", name: "Ростех" },
-    { src: "/clients/9.png", name: 'АО "Щелковский завод"', showName: true }, 
+    { src: "/clients/9.png", name: 'АО "Щелковский завод ВДМ"', showName: true }, 
   ];
 
   return (

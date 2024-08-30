@@ -20,16 +20,19 @@ const Contacts = () => {
     const message = `Новая заявка на контакт:\nФИО: ${fullName}\nСпособ связи: ${contactMethod}\nКонтактные данные: ${contactValue}\nКомментарий: ${comment}`;
 
     try {
-      const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
+      const response = await fetch(
+        `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            chat_id: TELEGRAM_CHAT_ID,
+            text: message,
+          }),
         },
-        body: JSON.stringify({
-          chat_id: TELEGRAM_CHAT_ID,
-          text: message
-        })
-      });
+      );
 
       if (response.ok) {
         alert('Сообщение успешно отправлено!');
@@ -43,7 +46,7 @@ const Contacts = () => {
   };
 
   return (
-    <div className="contacts" id='contacts'>
+    <div className="contacts" id="contacts">
       <Container className="py-5">
         <Row className="align-items-center">
           <Col xs={12} md={4} className="contact-info-container">
@@ -56,7 +59,7 @@ const Contacts = () => {
           </Col>
           <Col xs={12} md={4} className="contact-info-container">
             <p className="contact-info">
-              <strong>{t('email_label')}:</strong> info@oookasmet.com
+              <strong>{t('email_label')}:</strong> info@oookasmet.ru
             </p>
           </Col>
         </Row>
@@ -66,40 +69,55 @@ const Contacts = () => {
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="formFullName">
                 <Form.Label>{t('full_name_label')}</Form.Label>
-                <Form.Control type="text" name="fullName" placeholder={t('full_name_placeholder')} required />
+                <Form.Control
+                  type="text"
+                  name="fullName"
+                  placeholder={t('full_name_placeholder')}
+                  required
+                />
               </Form.Group>
 
               <Form.Group controlId="formContactMethod" className="mt-3">
                 <Form.Label>{t('contact_method_label')}</Form.Label>
-                <Form.Check 
-                  type="radio" 
-                  label={t('contact_method_email')} 
-                  name="contactMethod" 
-                  value="email" 
-                  id="contactMethodEmail" 
-                  required 
+                <Form.Check
+                  type="radio"
+                  label={t('contact_method_email')}
+                  name="contactMethod"
+                  value="email"
+                  id="contactMethodEmail"
+                  required
                 />
-                <Form.Check 
-                  type="radio" 
-                  label={t('contact_method_phone')} 
-                  name="contactMethod" 
-                  value="phone" 
-                  id="contactMethodPhone" 
-                  required 
+                <Form.Check
+                  type="radio"
+                  label={t('contact_method_phone')}
+                  name="contactMethod"
+                  value="phone"
+                  id="contactMethodPhone"
+                  required
                 />
               </Form.Group>
 
               <Form.Group controlId="formContactValue" className="mt-3">
                 <Form.Label>{t('contact_value_label')}</Form.Label>
-                <Form.Control type="text" name="contactValue" placeholder={t('contact_value_placeholder')} required />
+                <Form.Control
+                  type="text"
+                  name="contactValue"
+                  placeholder={t('contact_value_placeholder')}
+                  required
+                />
               </Form.Group>
 
               <Form.Group controlId="formComment" className="mt-3">
                 <Form.Label>Комментарий</Form.Label>
-                <Form.Control as="textarea" rows={3} name="comment" placeholder="Введите ваш комментарий (опционально)" />
+                <Form.Control
+                  as="textarea"
+                  rows={3}
+                  name="comment"
+                  placeholder="Введите ваш комментарий (опционально)"
+                />
               </Form.Group>
 
-              <Button className='button_send mt-4' type="submit">
+              <Button className="button_send mt-4" type="submit">
                 {t('submit_button')}
               </Button>
             </Form>

@@ -6,7 +6,7 @@ const Catalog = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="catalog" id='catalog'>
+    <div className="catalog" id="catalog">
       <Container className="py-5">
         <h2 className="text-center">{t('catalogTitle')}</h2>
         <Row>
@@ -22,6 +22,7 @@ const Catalog = () => {
                   <li>{t('finishedBimetallicProducts')}</li>
                   <li>{t('finishedRefiningProducts')}</li>
                   <li>{t('finishedPalladiumPlatinum')}</li>
+                  <li>{t('finishedCatholicSystems')}</li>
                 </ul>
               </Card.Body>
             </Card>
