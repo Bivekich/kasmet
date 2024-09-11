@@ -7,20 +7,25 @@ import "./Catalog.css";
 const Catalog = () => {
   const { t } = useTranslation();
   const [goldPrice, setGoldPrice] = useState(null);
-  const [rubConversionRate, setRubConversionRate] = useState(null); // State for RUB rate
+  const [rubConversionRate, setRubConversionRate] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const getCurrentDateTime = () => {
     const now = new Date();
-    const time = `${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
-    const date = `${now.getDate()}.${(now.getMonth() + 1).toString().padStart(2, '0')}.${now.getFullYear()}`;
-    return `${t("priceAt")} ${time} ${date} г`; // Use translation key for "Цена на"
+    const time = `${now.getHours()}:${now
+      .getMinutes()
+      .toString()
+      .padStart(2, "0")}`;
+    const date = `${now.getDate()}.${(now.getMonth() + 1)
+      .toString()
+      .padStart(2, "0")}.${now.getFullYear()}`;
+    return `${t("priceAt")} ${time} ${date} г`;
   };
 
   useEffect(() => {
     const fetchGoldPrice = async () => {
-      setLoading(true); // Set loading to true before fetching
+      setLoading(true);
       try {
         const response = await fetch("https://api.gold-api.com/price/XAU");
         if (!response.ok) {
@@ -30,9 +35,9 @@ const Catalog = () => {
         setGoldPrice(data.price);
       } catch (error) {
         console.error("Error fetching gold price:", error);
-        setError(t("errorFetchingPrice")); // Set error message
+        setError(t("errorFetchingPrice"));
       } finally {
-        setLoading(false); // Set loading to false after fetching
+        setLoading(false);
       }
     };
 
@@ -42,7 +47,6 @@ const Catalog = () => {
           "https://www.cbr-xml-daily.ru/daily_json.js"
         );
         const data = response.data;
-        // Get the USD to RUB conversion rate
         const usdToRub = data.Valute.USD.Value;
         setRubConversionRate(usdToRub);
       } catch (error) {
@@ -52,7 +56,7 @@ const Catalog = () => {
     };
 
     fetchGoldPrice();
-    fetchRUBConversionRate(); // Fetch RUB conversion rate
+    fetchRUBConversionRate();
   }, [t]);
 
   return (
@@ -136,7 +140,7 @@ const Catalog = () => {
                               ((100 - 4.6) / 100) *
                               0.585
                             ).toFixed(0)}{" "}
-                            RUB 
+                            RUB
                           </p>
                         )}
                       </li>
@@ -153,7 +157,7 @@ const Catalog = () => {
                               ((100 - 4.3) / 100) *
                               0.75
                             ).toFixed(0)}{" "}
-                            RUB 
+                            RUB
                           </p>
                         )}
                       </li>
@@ -170,7 +174,7 @@ const Catalog = () => {
                               ((100 - 4) / 100) *
                               0.999
                             ).toFixed(0)}{" "}
-                            RUB 
+                            RUB
                           </p>
                         )}
                       </li>
