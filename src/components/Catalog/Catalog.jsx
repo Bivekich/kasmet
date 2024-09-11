@@ -77,6 +77,15 @@ const Catalog = () => {
                   <li>{t("finishedRefiningProducts")}</li>
                   <li>{t("finishedPalladiumPlatinum")}</li>
                   <li>{t("finishedCatholicSystems")}</li>
+                  <li>{t("finishedSilverPowders")}</li>
+                  <li>{t("finishedSilverPowder1")}</li>
+                  <li>{t("finishedSilverPowder2")}</li>
+                  <li>{t("finishedSilverCadmiumOxide")}</li>
+                  <li>{t("finishedSilverCopperOxide")}</li>
+                  <li>{t("finishedSilverOxide")}</li>
+                  <li>{t("finishedSilverNitrate")}</li>
+                  <li>{t("finishedActiveSilverPowder")}</li>
+                  <li>{t("finishedGranulatedSilverPowder")}</li>
                 </ul>
               </Card.Body>
             </Card>

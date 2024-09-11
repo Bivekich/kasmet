@@ -87,5 +87,14 @@
   "all_rights_reserved": "Все права защищены.",
   "made_with": "Made with",
   "by": "by",
-  "priceAt": "Цена на"
+  "priceAt": "Цена на",
+  "finishedSilverPowders": "Порошки серебряные",
+  "finishedSilverPowder1": "Порошок серебряный (ПСр1)",
+  "finishedSilverPowder2": "Порошок серебряный текучий (ПСр2Т)",
+  "finishedSilverCadmiumOxide": "Порошок мелкодисперсный гранулированный серебро-окись кадмия (Ag-CdO)",
+  "finishedSilverCopperOxide": "Порошок мелкодисперсный гранулированный серебро-окись меди (Ag-CuO)",
+  "finishedSilverOxide": "Серебро оксид чистый (Ag₂O)",
+  "finishedSilverNitrate": "Серебро азотнокислое (AgNO₃)",
+  "finishedActiveSilverPowder": "Порошок серебряный электро-химически активный (ПСЭХА)",
+  "finishedGranulatedSilverPowder": "Порошок серебряный гранулированный (ПСр1г)"
 }
