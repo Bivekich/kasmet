@@ -15,17 +15,23 @@ const Addresses = () => {
   ];
 
   return (
-    <div className="addresses" id='addresses'>
+    <div className="addresses" id="addresses">
       <Container className="py-5">
         <h2 className="text-center">{t('address_title')}</h2>
         <Row>
           {addresses.map((addr, index) => (
-            <Col md={6} lg={3} key={index} className="mb-4">
+            <Col md={4} key={index} className="mb-4">
               <div className="address-card">
                 <h5>{addr.city}</h5>
-                <p><strong>{t('address_label')}:</strong> {addr.address}</p>
-                <p><strong>{t('phone_label')}:</strong> {addr.phone}</p>
-                <p><strong>{t('hours_label')}:</strong> {addr.hours}</p>
+                <p>
+                  <strong>{t('address_label')}:</strong> {addr.address}
+                </p>
+                <p>
+                  <strong>{t('phone_label')}:</strong> {addr.phone}
+                </p>
+                <p>
+                  <strong>{t('hours_label')}:</strong> {addr.hours}
+                </p>
               </div>
             </Col>
           ))}
