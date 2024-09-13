@@ -1,45 +1,250 @@
+/* Catalog section styling */
 .catalog {
-  background-color: #ED6841;
+  background-color: #ffffff;
   color: #fff;
   padding: 40px 0;
+  position: relative;
 }
 
 .catalog h2 {
-  color: #fff;
+  color: #000000;
   margin-bottom: 30px;
-}
-
-.catalog-card {
-  background-color: #fff;
-  color: #000; 
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.catalog-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.catalog-section {
-  margin-bottom: 20px;
-}
-
-.price-table {
-  background-color: #fff; 
-  color: #000; 
-  border-radius: 10px;
-  font-size: 0.7rem;
-}
-
-.price-table th, .price-table td {
   text-align: center;
+  display: block; /* Ensure the title takes its own line */
+  width: 100%; /* Optional: make it full width */
+  z-index: 1; /* Ensure the title is above the orange background */
+  position: relative; /* Position it relative to the parent */
 }
 
+.catalog-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+  justify-content: space-around;
+  gap: 1.5%; /* Space between cards */
+  width: 70%; /* Ensure the container takes up the full width */
+  margin: auto;
+}
+
+/* Catalog section/card container */
+.catalog-section {
+  flex: 1 1 30%; /* Flex-grow, flex-shrink, flex-basis */
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  margin-top: 2rem;
+}
+
+.catalog-section:hover {
+  transform: translateY(-10px); /* Move card up on hover */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+/* Card styling */
+.catalog-card {
+  flex: 1; /* Allow card to grow and fill the section */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: space-between; /* Distribute space evenly */
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer; /* Indicate that the card is clickable */
+  padding: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  position: relative;
+  min-height: 310px; /* Set a minimum height for uniformity */
+}
+
+@media screen and (max-width: 1540px) {
+  .catalog-card {
+    min-height: 355px; /* Increase height on smaller screens */
+  }
+  .title-section {
+    padding-top: 30px;
+  }
+}
+
+/* Card header */
+.card-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Card title */
+.card-title {
+  margin: 0;
+  padding: 1rem;
+  padding-bottom: 0;
+  font-size: 32px;
+  width: 100%;
+  line-height: 38.4px;
+}
+
+/* Title section containing the arrow and category image */
+.title-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px; /* Space between title and images */
+}
+
+.category-image {
+  width: 230px;
+  height: 190px;
+  object-fit: cover;
+}
+
+.dropdown-arrow {
+  margin-left: 10px;
+  transform: translateY(70px);
+}
+
+.dropdown-content {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for dropdown */
+  border-radius: 25px; /* Optional: add border radius for a softer look */
+  margin-top: 5px; /* Space between title and dropdown */
+  background-color: #fff; /* Ensure the dropdown has a background */
+  z-index: 2; /* Ensure it appears above other elements */
+  position: relative;
+  color: #000;
+  padding-bottom: 10px;
+}
+
+.description-block {
+  position: relative;
+  transform: translateY(-57px);
+  z-index: 1;
+}
+
+.description-block ul {
+  padding-top: 70px;
+  padding-bottom: 1.5rem;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  margin: -10px;
+  margin-right: 20px;
+}
+
+/* Responsive styling */
 @media (max-width: 767.98px) {
   .catalog-section {
+    flex: 1 1 100%; /* Full width on small screens */
     margin-bottom: 15px;
   }
+}
+
+.orange-bg {
+  position: absolute; /* Position the orange background absolutely */
+  left: 1%;
+  width: 98%;
+  top: 100px;
+  height: 90%;
+  z-index: 0; /* Keep it behind other content */
+  box-sizing: border-box;
+  background-color: #ed6841;
+  border-radius: 50px;
+}
+
+.orange-bg-left {
+  position: absolute; /* Position the orange background absolutely */
+  left: 1%;
+  width: 40%;
+  top: 40px;
+  height: 40%;
+  z-index: 0; /* Keep it behind other content */
+  box-sizing: border-box;
+  background-color: #ed6841;
+  border-radius: 50px;
+}
+
+.orange-bg-right {
+  position: absolute; /* Position the orange background absolutely */
+ right: 1%;
+  width: 40%;
+  top: 40px;
+  height: 40%;
+  z-index: 0; /* Keep it behind other content */
+  box-sizing: border-box;
+  background-color: #ed6841;
+  border-radius: 50px;
+}
+
+@media screen and (max-width: 1415px) {
+  .orange-bg {
+    top: 95px;
+    height: 95%;
+  }
+  .orange-bg-left {
+    top: 30px;
+    height: 30%;
+  }
+  .orange-bg-right {
+    top: 30px;
+    height: 30%;
+  }
+  
+}
+
+@media  screen and (max-width: 930px) {
+  .orange-bg {
+    top:100px;
+  }
+  .orange-bg-left {
+    top: 30px;
+  }
+  .orange-bg-right {
+    top: 30px;
+  }
+}
+
+
+@media  screen and (max-width: 800px) {
+  .orange-bg {
+    top:90px;
+    height: 95%;
+  }
+  .orange-bg-left {
+    top: 30px;
+    height: 30%;
+    width: 35%;
+  }
+  .orange-bg-right {
+    top: 30px;
+    height: 30%;
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .orange-bg {
+    border-radius: 30px;
+  }
+  .orange-bg-left,
+  .orange-bg-right {
+    border-radius: 30px;
+  }
+  .category-image {
+    width: 75%;
+    height: 100%;
+  }
+  .title-section {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0;
+  }
+ .dropdown-arrow{
+  transform: none;
+margin-top: 10px;
+margin-left: -200px;
+width: 40px;
+ }
 }
