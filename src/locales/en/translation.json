@@ -119,5 +119,7 @@
   "finishedSilverOxide": "Pure Silver Oxide (Ag₂O)",
   "finishedSilverNitrate": "Silver Nitrate (AgNO₃)",
   "finishedActiveSilverPowder": "Electrochemically Active Silver Powder (ПСЭХА)",
-  "finishedGranulatedSilverPowder": "Granulated Silver Powder (ПСр1г)"
+  "finishedGranulatedSilverPowder": "Granulated Silver Powder (ПСр1г)",
+  "powders": "Powders",
+  "PreciousMetalProducts": "Products"
 }

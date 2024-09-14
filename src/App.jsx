@@ -9,17 +9,19 @@ import Contacts from "./components/Contacts/Contacts";
 import Footer from "./components/Footer/Footer";
 
 function App() {
-  return <div className="app">
-    <Header />
-    <Hero />
-    <Catalog />
-    <About />
-    <World />
-    <Clients />
-    <Addresses />
-    <Contacts />
-    <Footer />
-  </div>;
+  return (
+    <div className="app">
+      <Header />
+      <Hero />
+      <About />
+      <Catalog />
+      <World />
+      <Clients />
+      <Addresses />
+      <Contacts />
+      <Footer />
+    </div>
+  );
 }
 
 export default App;

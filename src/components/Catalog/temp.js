@@ -49,22 +49,22 @@ const Catalog = () => {
                 </div>
                 {showFinishedProducts && ( // Dropdown content
                   <ul>
-                    <li>{t("finishedAnodesGold")}</li>
-                    <li>{t("finishedAnodesSilver")}</li>
-                    <li>{t("finishedAnodesPlatinum")}</li>
-                    <li>{t("finishedBimetallicProducts")}</li>
-                    <li>{t("finishedRefiningProducts")}</li>
-                    <li>{t("finishedPalladiumPlatinum")}</li>
-                    <li>{t("finishedCatholicSystems")}</li>
-                    <li>{t("finishedSilverPowders")}</li>
-                    <li>{t("finishedSilverPowder1")}</li>
-                    <li>{t("finishedSilverPowder2")}</li>
-                    <li>{t("finishedSilverCadmiumOxide")}</li>
-                    <li>{t("finishedSilverCopperOxide")}</li>
-                    <li>{t("finishedSilverOxide")}</li>
-                    <li>{t("finishedSilverNitrate")}</li>
-                    <li>{t("finishedActiveSilverPowder")}</li>
-                    <li>{t("finishedGranulatedSilverPowder")}</li>
+                    <li><span className="arrow">→</span>{t("finishedAnodesGold")}</li>
+                    <li><span className="arrow">→</span>{t("finishedAnodesSilver")}</li>
+                    <li><span className="arrow">→</span>{t("finishedAnodesPlatinum")}</li>
+                    <li><span className="arrow">→</span>{t("finishedBimetallicProducts")}</li>
+                    <li><span className="arrow">→</span>{t("finishedRefiningProducts")}</li>
+                    <li><span className="arrow">→</span>{t("finishedPalladiumPlatinum")}</li>
+                    <li><span className="arrow">→</span>{t("finishedCatholicSystems")}</li>
+                    <li><span className="arrow">→</span>{t("finishedSilverPowders")}</li>
+                    <li><span className="arrow">→</span>{t("finishedSilverPowder1")}</li>
+                    <li><span className="arrow">→</span>{t("finishedSilverPowder2")}</li>
+                    <li><span className="arrow">→</span>{t("finishedSilverCadmiumOxide")}</li>
+                    <li><span className="arrow">→</span>{t("finishedSilverCopperOxide")}</li>
+                    <li><span className="arrow">→</span>{t("finishedSilverOxide")}</li>
+                    <li><span className="arrow">→</span>{t("finishedSilverNitrate")}</li>
+                    <li><span className="arrow">→</span>{t("finishedActiveSilverPowder")}</li>
+                    <li><span className="arrow">→</span>{t("finishedGranulatedSilverPowder")}</li>
                   </ul>
                 )}
               </Card.Body>

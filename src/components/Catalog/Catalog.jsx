@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
-import dropDownArrow from "/dropDownArrow.svg"; // Adjust the path as necessary
-import finishedProductsImage from "/melt.png"; // Adjust the path as necessary
-import rawMaterialsImage from "/silver.png"; // Adjust the path as necessary
-import scrapPurchaseImage from "/copper.png"; // Adjust the path as necessary
-import "./Catalog.css"; // Import the custom CSS
+import dropDownArrow from "/dropDownArrow.svg";
+import finishedProductsImage from "/melt.png";
+import rawMaterialsImage from "/silver.png";
+import scrapPurchaseImage from "/copper.png";
+import "./Catalog.css";
 
 const Catalog = () => {
   const { t } = useTranslation();
@@ -13,11 +13,16 @@ const Catalog = () => {
   const [showRawMaterials, setShowRawMaterials] = useState(false);
   const [showScrapPurchase, setShowScrapPurchase] = useState(false);
 
+  // New state variables for subcategories
+  const [showFinishedSubcategory, setShowFinishedSubcategory] = useState(false);
+  const [showFinishedSubcategory2, setShowFinishedSubcategory2] = useState(false);
+
+
   return (
     <div className="catalog" id="catalog">
-      <div className="orange-bg" /> 
-      <div className="orange-bg-left"/>
-      <div className="orange-bg-right"/>
+      <div className="orange-bg" />
+      <div className="orange-bg-left" />
+      <div className="orange-bg-right" />
       <div className="catalog-container">
         <h2>{t("catalogTitle")}</h2>
 
@@ -33,7 +38,7 @@ const Catalog = () => {
                   src={dropDownArrow}
                   alt="Dropdown Arrow"
                   className="dropdown-arrow"
-                  onClick={() => setShowFinishedProducts(!showFinishedProducts)} // Make only the arrow clickable
+                  onClick={() => setShowFinishedProducts(!showFinishedProducts)}
                 />
                 <img
                   src={finishedProductsImage}
@@ -43,74 +48,112 @@ const Catalog = () => {
               </div>
             </div>
           </div>
+          
           {showFinishedProducts && (
             <div className="description-block">
-            <ul className="dropdown-content">
+              <ul className="dropdown-content">
               <li>
-                <span className="arrow">→</span>
-                {t("finishedAnodesGold")}
-              </li>
-              <li>
-                <span className="arrow">→</span>
-                {t("finishedAnodesSilver")}
-              </li>
-              <li>
-                <span className="arrow">→</span>
-                {t("finishedAnodesPlatinum")}
-              </li>
-              <li>
-                <span className="arrow">→</span>
-                {t("finishedBimetallicProducts")}
-              </li>
-              <li>
-                <span className="arrow">→</span>
-                {t("finishedRefiningProducts")}
-              </li>
-              <li>
-                <span className="arrow">→</span>
-                {t("finishedPalladiumPlatinum")}
-              </li>
-              <li>
-                <span className="arrow">→</span>
-                {t("finishedCatholicSystems")}
-              </li>
-              <li>
-                <span className="arrow">→</span>
-                {t("finishedSilverPowders")}
-              </li>
-              <li>
-                <span className="arrow">→</span>
-                {t("finishedSilverPowder1")}
-              </li>
-              <li>
-                <span className="arrow">→</span>
-                {t("finishedSilverPowder2")}
-              </li>
-              <li>
-                <span className="arrow">→</span>
-                {t("finishedSilverCadmiumOxide")}
-              </li>
-              <li>
-                <span className="arrow">→</span>
-                {t("finishedSilverCopperOxide")}
-              </li>
-              <li>
-                <span className="arrow">→</span>
-                {t("finishedSilverOxide")}
-              </li>
-              <li>
-                <span className="arrow">→</span>
-                {t("finishedSilverNitrate")}
-              </li>
-              <li>
-                <span className="arrow">→</span>
-                {t("finishedActiveSilverPowder")}
-              </li>
-              <li>
-                <span className="arrow">→</span>
-                {t("finishedGranulatedSilverPowder")}
-              </li>
-            </ul>
+                  <span className="arrow">→</span>
+                  <span style={{ fontSize: "20px", fontWeight: "bold" }}>
+                    {t("PreciousMetalProducts")}{" "}
+                  </span>
+                  <span
+                    className="small-arrow"
+                    onClick={() =>
+                      setShowFinishedSubcategory(!showFinishedSubcategory)
+                    }
+                  >
+                    ▼
+                  </span>
+                  {showFinishedSubcategory && (
+                    <ul className="subcategory-dropdown">
+                      <li>
+                  <span className="arrow">→</span>
+                  {t("finishedAnodesGold")}
+                </li>
+                <li>
+                  <span className="arrow">→</span>
+                  {t("finishedAnodesSilver")}
+                </li>
+                <li>
+                  <span className="arrow">→</span>
+                  {t("finishedAnodesPlatinum")}
+                </li>
+                <li>
+                  <span className="arrow">→</span>
+                  {t("finishedBimetallicProducts")}
+                </li>
+                <li>
+                  <span className="arrow">→</span>
+                  {t("finishedRefiningProducts")}
+                </li>
+                <li>
+                  <span className="arrow">→</span>
+                  {t("finishedPalladiumPlatinum")}
+                </li>
+                <li>
+                  <span className="arrow">→</span>
+                  {t("finishedCatholicSystems")}
+                </li>
+                      </ul>
+                  )}
+                </li>
+                
+                <li>
+                  <span className="arrow">→</span>
+                  <span style={{ fontSize: "20px", fontWeight: "bold" }}>
+                    {t("powders")}{" "}
+                  </span>
+                  <span
+                    className="small-arrow"
+                    onClick={() =>
+                      setShowFinishedSubcategory2(!showFinishedSubcategory2)
+                    }
+                  >
+                    ▼
+                  </span>
+                  {showFinishedSubcategory2 && (
+                    <ul className="subcategory-dropdown">
+                      <li>
+                        <span className="arrow">→</span>
+                        {t("finishedSilverPowders")}
+                      </li>
+                      <li>
+                        <span className="arrow">→</span>
+                        {t("finishedSilverPowder1")}
+                      </li>
+                      <li>
+                        <span className="arrow">→</span>
+                        {t("finishedSilverPowder2")}
+                      </li>
+                      <li>
+                        <span className="arrow">→</span>
+                        {t("finishedSilverCadmiumOxide")}
+                      </li>
+                      <li>
+                        <span className="arrow">→</span>
+                        {t("finishedSilverCopperOxide")}
+                      </li>
+                      <li>
+                        <span className="arrow">→</span>
+                        {t("finishedActiveSilverPowder")}
+                      </li>
+                      <li>
+                        <span className="arrow">→</span>
+                        {t("finishedGranulatedSilverPowder")}
+                      </li>
+                      <li>
+                        <span className="arrow">→</span>
+                        {t("finishedSilverOxide")}
+                      </li>
+                      <li>
+                        <span className="arrow">→</span>
+                        {t("finishedSilverNitrate")}
+                      </li>
+                    </ul>
+                  )}
+                </li>
+              </ul>
             </div>
           )}
         </div>
@@ -125,7 +168,7 @@ const Catalog = () => {
                   src={dropDownArrow}
                   alt="Dropdown Arrow"
                   className="dropdown-arrow"
-                  onClick={() => setShowRawMaterials(!showRawMaterials)} // Make only the arrow clickable
+                  onClick={() => setShowRawMaterials(!showRawMaterials)}
                 />
                 <img
                   src={rawMaterialsImage}
@@ -184,7 +227,7 @@ const Catalog = () => {
                   src={dropDownArrow}
                   alt="Dropdown Arrow"
                   className="dropdown-arrow"
-                  onClick={() => setShowScrapPurchase(!showScrapPurchase)} // Make only the arrow clickable
+                  onClick={() => setShowScrapPurchase(!showScrapPurchase)}
                 />
                 <img
                   src={scrapPurchaseImage}
@@ -192,10 +235,10 @@ const Catalog = () => {
                   className="category-image"
                 />
               </div>
-              </div>
             </div>
-            {showScrapPurchase && (
-              <div className="description-block">
+          </div>
+          {showScrapPurchase && (
+            <div className="description-block">
               <ul className="dropdown-content">
                 <li>
                   <span className="arrow">→</span>
@@ -230,10 +273,9 @@ const Catalog = () => {
                   {t("osmium")}
                 </li>
               </ul>
-              </div>
-            )}
-          </div>
-        
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

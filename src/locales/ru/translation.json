@@ -105,5 +105,7 @@
   "finishedSilverOxide": "Серебро оксид чистый (Ag₂O)",
   "finishedSilverNitrate": "Серебро азотнокислое (AgNO₃)",
   "finishedActiveSilverPowder": "Порошок серебряный электро-химически активный (ПСЭХА)",
-  "finishedGranulatedSilverPowder": "Порошок серебряный гранулированный (ПСр1г)"
+  "finishedGranulatedSilverPowder": "Порошок серебряный гранулированный (ПСр1г)",
+  "powders": "Порошки",
+  "PreciousMetalProducts": "Изделия"
 }
