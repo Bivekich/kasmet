@@ -157,7 +157,10 @@ const Catalog = () => {
 
         {/* Raw Materials Section */}
         <div className="catalog-section">
-          <div className="catalog-card">
+          <div
+            className="catalog-card"
+            onClick={() => setShowRawMaterials(!showRawMaterials)}
+          >
             <div className="card-header">
               <div className="card-title">{t("rawMaterialsTitle")}</div>
               <div className="title-section">
@@ -165,7 +168,6 @@ const Catalog = () => {
                   src={dropDownArrow}
                   alt="Dropdown Arrow"
                   className="dropdown-arrow"
-                  onClick={() => setShowRawMaterials(!showRawMaterials)}
                 />
                 <img
                   src={rawMaterialsImage}
@@ -214,7 +216,10 @@ const Catalog = () => {
 
         {/* Scrap Purchase Section */}
         <div className="catalog-section">
-          <div className="catalog-card">
+          <div
+            className="catalog-card"
+            onClick={() => setShowScrapPurchase(!showScrapPurchase)}
+          >
             <div className="card-header">
               <div className="card-title" style={{ marginBottom: "40px" }}>
                 {t("scrapPurchaseTitle")}
@@ -224,7 +229,6 @@ const Catalog = () => {
                   src={dropDownArrow}
                   alt="Dropdown Arrow"
                   className="dropdown-arrow"
-                  onClick={() => setShowScrapPurchase(!showScrapPurchase)}
                 />
                 <img
                   src={scrapPurchaseImage}
