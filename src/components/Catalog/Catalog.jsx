@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import dropDownArrow from "/dropDownArrow.svg";
-import finishedProductsImage from "/melt.png";
-import rawMaterialsImage from "/silver.png";
+import finishedProductsImage from "/silver.png";
+import rawMaterialsImage from "/melt.png";
 import scrapPurchaseImage from "/copper.png";
 import "./Catalog.css";
 
@@ -13,10 +13,9 @@ const Catalog = () => {
   const [showRawMaterials, setShowRawMaterials] = useState(false);
   const [showScrapPurchase, setShowScrapPurchase] = useState(false);
 
-  // New state variables for subcategories
   const [showFinishedSubcategory, setShowFinishedSubcategory] = useState(false);
-  const [showFinishedSubcategory2, setShowFinishedSubcategory2] = useState(false);
-
+  const [showFinishedSubcategory2, setShowFinishedSubcategory2] =
+    useState(false);
 
   return (
     <div className="catalog" id="catalog">
@@ -28,7 +27,10 @@ const Catalog = () => {
 
         {/* Finished Products Section */}
         <div className="catalog-section">
-          <div className="catalog-card">
+          <div
+            className="catalog-card"
+            onClick={() => setShowFinishedProducts(!showFinishedProducts)}
+          >
             <div className="card-header">
               <div className="card-title" style={{ marginBottom: "40px" }}>
                 {t("finishedProductsTitle")}
@@ -38,7 +40,6 @@ const Catalog = () => {
                   src={dropDownArrow}
                   alt="Dropdown Arrow"
                   className="dropdown-arrow"
-                  onClick={() => setShowFinishedProducts(!showFinishedProducts)}
                 />
                 <img
                   src={finishedProductsImage}
@@ -48,76 +49,72 @@ const Catalog = () => {
               </div>
             </div>
           </div>
-          
+
           {showFinishedProducts && (
             <div className="description-block">
               <ul className="dropdown-content">
-              <li>
-                  <span className="arrow">→</span>
-                  <span style={{ fontSize: "20px", fontWeight: "bold" }}>
-                    {t("PreciousMetalProducts")}{" "}
-                  </span>
-                  <span
-                    className="small-arrow"
+                <li>
+                  <div
                     onClick={() =>
                       setShowFinishedSubcategory(!showFinishedSubcategory)
                     }
                   >
-                    ▼
-                  </span>
+                    <span className="arrow">→</span>
+                    <span style={{ fontSize: "20px", fontWeight: "bold" }}>
+                      {t("PreciousMetalProducts")}{" "}
+                    </span>
+                    <span className="small-arrow">▼</span>
+                  </div>
                   {showFinishedSubcategory && (
                     <ul className="subcategory-dropdown">
                       <li>
-                  <span className="arrow">→</span>
-                  {t("finishedAnodesGold")}
-                </li>
-                <li>
-                  <span className="arrow">→</span>
-                  {t("finishedAnodesSilver")}
-                </li>
-                <li>
-                  <span className="arrow">→</span>
-                  {t("finishedAnodesPlatinum")}
-                </li>
-                <li>
-                  <span className="arrow">→</span>
-                  {t("finishedBimetallicProducts")}
-                </li>
-                <li>
-                  <span className="arrow">→</span>
-                  {t("finishedRefiningProducts")}
-                </li>
-                <li>
-                  <span className="arrow">→</span>
-                  {t("finishedPalladiumPlatinum")}
-                </li>
-                <li>
-                  <span className="arrow">→</span>
-                  {t("finishedCatholicSystems")}
-                </li>
-                      </ul>
+                        <span className="arrow">→</span>
+                        {t("finishedAnodesGold")}
+                      </li>
+                      <li>
+                        <span className="arrow">→</span>
+                        {t("finishedAnodesSilver")}
+                      </li>
+                      <li>
+                        <span className="arrow">→</span>
+                        {t("finishedAnodesPlatinum")}
+                      </li>
+                      <li>
+                        <span className="arrow">→</span>
+                        {t("finishedBimetallicProducts")}
+                      </li>
+                      <li>
+                        <span className="arrow">→</span>
+                        {t("finishedRefiningProducts")}
+                      </li>
+                      <li>
+                        <span className="arrow">→</span>
+                        {t("finishedPalladiumPlatinum")}
+                      </li>
+                      <li>
+                        <span className="arrow">→</span>
+                        {t("finishedCatholicSystems")}
+                      </li>
+                    </ul>
                   )}
                 </li>
-                
+
                 <li>
-                  <span className="arrow">→</span>
-                  <span style={{ fontSize: "20px", fontWeight: "bold" }}>
-                    {t("powders")}{" "}
-                  </span>
-                  <span
-                    className="small-arrow"
+                  {" "}
+                  <div
                     onClick={() =>
                       setShowFinishedSubcategory2(!showFinishedSubcategory2)
                     }
                   >
-                    ▼
-                  </span>
+                    <span className="arrow">→</span>
+
+                    <span style={{ fontSize: "20px", fontWeight: "bold" }}>
+                      {t("powders")}{" "}
+                    </span>
+                    <span className="small-arrow">▼</span>
+                  </div>
                   {showFinishedSubcategory2 && (
                     <ul className="subcategory-dropdown">
-                      <li>
-                        <span className="arrow">→</span>
-                        {t("finishedSilverPowders")}
-                      </li>
                       <li>
                         <span className="arrow">→</span>
                         {t("finishedSilverPowder1")}

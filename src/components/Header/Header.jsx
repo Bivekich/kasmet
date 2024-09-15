@@ -1,45 +1,45 @@
-import { Navbar, Nav, Button, Container, NavDropdown } from 'react-bootstrap';
-import { useTranslation } from 'react-i18next';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import './Header.css';
-import '../../i18n';
+import { Navbar, Nav, Button, Container, NavDropdown } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import "./Header.css";
+import "../../i18n";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
   const [goldPrice, setGoldPrice] = useState(null);
   const [rubConversionRate, setRubConversionRate] = useState(null);
   const [error, setError] = useState(null);
-  const [lastUpdated, setLastUpdated] = useState('');
+  const [lastUpdated, setLastUpdated] = useState("");
 
   // Функция для получения данных о ценах на золото и курсе RUB
   useEffect(() => {
     const fetchGoldPrice = async () => {
       try {
-        const response = await fetch('https://api.gold-api.com/price/XAU');
+        const response = await fetch("https://api.gold-api.com/price/XAU");
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         const data = await response.json();
         setGoldPrice(data.price);
         setLastUpdated(new Date().toLocaleString());
       } catch (error) {
-        console.error('Error fetching gold price:', error);
-        setError(t('errorFetchingPrice'));
+        console.error("Error fetching gold price:", error);
+        setError(t("errorFetchingPrice"));
       }
     };
 
     const fetchRUBConversionRate = async () => {
       try {
         const response = await axios.get(
-          'https://www.cbr-xml-daily.ru/daily_json.js',
+          "https://www.cbr-xml-daily.ru/daily_json.js"
         );
         const data = response.data;
         const usdToRub = data.Valute.USD.Value;
         setRubConversionRate(usdToRub);
       } catch (error) {
-        console.error('Error fetching RUB conversion rate:', error);
-        setError(t('errorFetchingRate'));
+        console.error("Error fetching RUB conversion rate:", error);
+        setError(t("errorFetchingRate"));
       }
     };
 
@@ -52,16 +52,16 @@ const Header = () => {
       return (
         (goldPrice / 31.1035) *
         rubConversionRate *
-        ((100 - 5) / 100) * // 5% комиссия
+        ((100 - 10) / 100) * // 5% комиссия
         purity
       ).toFixed(0);
     }
-    return '-';
+    return "-";
   };
 
   const handleSelect = (language) => {
     i18n.changeLanguage(language);
-    localStorage.setItem('language', language);
+    localStorage.setItem("language", language);
   };
 
   return (
@@ -73,33 +73,36 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto">
-            <Nav.Link href="#about">{t('company')}</Nav.Link>
-            <Nav.Link href="#catalog">{t('catalog')}</Nav.Link>
-            <Nav.Link href="#world">{t('world')}</Nav.Link>
-            <Nav.Link href="#clients">{t('clients')}</Nav.Link>
-            <Nav.Link href="#addresses">{t('addresses')}</Nav.Link>
-            <NavDropdown title={t('prices')} id="gold-price-dropdown">
-              <NavDropdown.Header>{t('goldPrices')}</NavDropdown.Header>
+            <Nav.Link href="#about">{t("company")}</Nav.Link>
+            <Nav.Link href="#catalog">{t("catalog")}</Nav.Link>
+            <Nav.Link href="#world">{t("world")}</Nav.Link>
+            <Nav.Link href="#clients">{t("clients")}</Nav.Link>
+            <Nav.Link href="#addresses">{t("addresses")}</Nav.Link>
+            <NavDropdown title={t("prices")} id="gold-price-dropdown">
+              <NavDropdown.Header>{t("goldPrices")}</NavDropdown.Header>
               {error && (
-                <NavDropdown.Item>{t('errorFetchingPrice')}</NavDropdown.Item>
+                <NavDropdown.Item>{t("errorFetchingPrice")}</NavDropdown.Item>
               )}
               {goldPrice && (
                 <>
                   <NavDropdown.Item>
-                    {t('375')}: {calculatePrice(0.375)} RUB
+                    {t("375")}: {calculatePrice(0.375)} RUB
                   </NavDropdown.Item>
                   <NavDropdown.Item>
-                    {t('585')}: {calculatePrice(0.585)} RUB
+                    {t("585")}: {calculatePrice(0.585)} RUB
                   </NavDropdown.Item>
                   <NavDropdown.Item>
-                    {t('750')}: {calculatePrice(0.75)} RUB
+                    {t("750")}: {calculatePrice(0.75)} RUB
                   </NavDropdown.Item>
                   <NavDropdown.Item>
-                    {t('999')}: {calculatePrice(0.999)} RUB
+                    {t("999")}: {calculatePrice(0.999)} RUB
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as="button" onClick={() => window.location.href = '#contacts'}>
+                    {t("inquireBulkPrice")}
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item>
-                    {t('pricesUpdatedAt')}: {lastUpdated}
+                    {t("pricesUpdatedAt")}: {lastUpdated}
                   </NavDropdown.Item>
                 </>
               )}
@@ -108,9 +111,9 @@ const Header = () => {
             <NavDropdown
               title={
                 <span>
-                  {i18n.language === 'ru' ? 'Русский' : 'English'}
+                  {i18n.language === "ru" ? "Русский" : "English"}
                   <img
-                    src={`/flags/${i18n.language === 'ru' ? 'ru' : 'gb'}.svg`}
+                    src={`/flags/${i18n.language === "ru" ? "ru" : "gb"}.svg`}
                     alt={i18n.language}
                     className="flag-icon"
                   />
@@ -120,18 +123,18 @@ const Header = () => {
               onSelect={handleSelect}
             >
               <NavDropdown.Item eventKey="ru">
-                <img src="/flags/ru.svg" alt="Русский" className="flag-icon" />{' '}
+                <img src="/flags/ru.svg" alt="Русский" className="flag-icon" />{" "}
                 Русский
               </NavDropdown.Item>
               <NavDropdown.Item eventKey="en">
-                <img src="/flags/gb.svg" alt="English" className="flag-icon" />{' '}
+                <img src="/flags/gb.svg" alt="English" className="flag-icon" />{" "}
                 English
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
 
           <Button variant="outline-light" className="ml-auto contact-button">
-            <a href="#contacts">{t('contacts')}</a>
+            <a href="#contacts">{t("contacts")}</a>
           </Button>
         </Navbar.Collapse>
       </Container>

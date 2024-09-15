@@ -21,6 +21,7 @@
 
 .footer-links ul li {
   margin-bottom: 10px;
+  margin-left: 0;
 }
 
 .footer-links ul li a {
@@ -54,5 +55,8 @@
   .footer-contact, .footer-links, .footer-about {
     text-align: center;
     margin-bottom: 20px;
+  }
+  .footer-links ul li {
+    margin-left: 20px;
   }
 }
